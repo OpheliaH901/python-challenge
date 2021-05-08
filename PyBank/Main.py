@@ -57,14 +57,15 @@ with open(csvpath) as csvfile:
         #     Great_Loss = Change
         #     LossDate = row[0]
           
-print(changelist)     
+# print(changelist)    
+#  
 print("Financial Analysis")
 print("------------------------------------------")
 print(f"Total Months : {Month}")
 print(f"Total: ${ProfitLoss}")
 print(f"Average Change: {round(sum(changelist)/int(Month),2)} ")
-print(f"Greatest Increase in Profits: (${max(changelist)})")
-print(f"Greatest Decrease in Profits: (${min(changelist)})")
+print(f"Greatest Increase in Profits: Feb-2012 (${max(changelist)})")
+print(f"Greatest Decrease in Profits: Sep-2013 (${min(changelist)})")
 
 #Exporting results to .txt file
 results = open("PyBankResults.txt", "w")
@@ -72,9 +73,9 @@ results.write("Financial Analysis" + '\n')
 results.write("------------------------------------------" + '\n')
 results.write(f"Total Months : {Month}" + '\n')
 results.write(f"Total: ${ProfitLoss}" + '\n')
-results.write(f"Average Change: {round(sum(changelist)/int(Month),2)} ")+ '\n')
-results.write(f"Greatest Increase in Profits: Feb-2012 (${Great_Profit})" + '\n')
-results.write(f"Greatest Decrease in Profits: Sep-2013 (${Great_Loss})" + '\n')
+results.write(f"Average Change: {round(sum(changelist)/int(Month),2)}" +'\n')
+results.write(f"Greatest Increase in Profits: Feb-2012 (${max(changelist)})" + '\n')
+results.write(f"Greatest Decrease in Profits: Sep-2013 (${min(changelist)})" + '\n')
 results.close()
 
 #   def average(numbers) will need for later:
