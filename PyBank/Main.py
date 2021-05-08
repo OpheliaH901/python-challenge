@@ -21,14 +21,26 @@ csvpath = "Resources/budget_data.csv"
 
 with open(csvpath) as csvfile:
     csvreader = csv.reader(csvfile)
+    # for row in csvreader:
+    #     print(row)
+
+    # Read the header row first (skip this part if there is no header)
+    csv_header = next(csv_file)
+
+    #Read each row. Header not included
     for row in csvreader:
-        print(row)
+        Month +=1
+        ProfitLoss+= int(row[1])
+        if int(row[1]) > Great_Profit:
+            Great_Profit = int(row[1])
+            ProfitDate = row[0]
+       
+        if int(row[1]) < Great_Loss:
+            Great_Loss = int(row[1])
+            LossDate = row[0]
 
-    #Total Months =
-    def total(months)
-
-  def average(numbers):
-    length = len(numbers)
-    sum(numbers)
-    total = 0.0  
+#   def average(numbers) will need for later:
+#     length = len(numbers)
+#     sum(numbers)
+#     total = 0.0  
 
