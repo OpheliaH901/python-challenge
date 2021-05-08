@@ -8,6 +8,7 @@ ProfitLoss = 0
 Great_Profit = 0
 Great_Loss = 0
 
+Last_Month = 0
 
 # Set path for file
 csvpath = "Resources/budget_data.csv"
@@ -45,6 +46,16 @@ print(f"Total Months : {Month}")
 print(f"Total: ${ProfitLoss}")
 print(f"Greatest Increase in Profits: {ProfitDate} (${Great_Profit})")
 print(f"Greatest Decrease in Profits: {LossDate} (${Great_Loss})")
+
+#Exporting results to .txt file
+results = open("PyBankResults.txt", "w")
+results.write("Financial Analysis" + '\n')
+results.write("------------------------------------------" + '\n')
+results.write(f"Total Months : {Month}" + '\n')
+results.write(f"Total: ${ProfitLoss}" + '\n')
+results.write(f"Greatest Increase in Profits: {ProfitDate} (${Great_Profit})" + '\n')
+results.write(f"Greatest Decrease in Profits: {LossDate} (${Great_Loss})" + '\n')
+results.close()
 
 #   def average(numbers) will need for later:
 #     length = len(numbers)
