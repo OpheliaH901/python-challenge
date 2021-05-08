@@ -25,7 +25,7 @@ with open(csvpath) as csvfile:
     #     print(row)
 
     # Read the header row first (skip this part if there is no header)
-    csv_header = next(csv_file)
+    csv_header = next(csvreader)
 
     #Read each row. Header not included
     for row in csvreader:
@@ -38,6 +38,13 @@ with open(csvpath) as csvfile:
         if int(row[1]) < Great_Loss:
             Great_Loss = int(row[1])
             LossDate = row[0]
+
+print("Financial Analysis")
+print("------------------------------------------")
+print(f"Total Months : {Month}")
+print(f"Total: ${ProfitLoss}")
+print(f"Greatest Increase in Profits: {ProfitDate} (${Great_Profit})")
+print(f"Greatest Decrease in Profits: {LossDate} (${Great_Loss})")
 
 #   def average(numbers) will need for later:
 #     length = len(numbers)
